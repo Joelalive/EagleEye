@@ -1,0 +1,22 @@
+.openbtn {
+    cursor: pointer;
+    font-size: 30px!important;
+  }
+
+  .sign-out {
+    cursor: pointer;
+  }
+
+  .accent-color {
+    color: var(--accent-color);
+  }
+
+  .small-font {
+    font-size: 20px;
+    color: black;
+  }
+
+  .nav-logo {
+    width: 165px;
+    height: 80px;
+  }
