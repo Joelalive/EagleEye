@@ -1,0 +1,8 @@
+.accent-color {
+    color: var(--accent-color);
+  }
+
+  .small-font {
+    font-size: 20px;
+    color: black;
+  }

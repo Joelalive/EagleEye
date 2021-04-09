@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  @Output() closeNavbar = new EventEmitter<void>();
+
+  @Input() openNav: boolean;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  closeNav() {
+    this.closeNavbar.emit();
+  }
+
+
+  redirectTo(routeUrl: string) {
+    this.router.navigateByUrl(routeUrl);
+    this.closeNav();
+  }
+
 
 }

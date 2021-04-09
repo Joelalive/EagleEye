@@ -1,5 +1,5 @@
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand openbtn" onclick="openNav()">☰</a>
+<nav class="navbar navbar-dark bg-dark" [ngClass]="{ 'expand-nav': openToggle }">
+    <a class="navbar-brand openbtn" (click)="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></a>
     <a class="mr-auto" href="#" >
       <img src="assets/images/eagle-logo.png" class="nav-logo" alt="">
     </a>

@@ -1,3 +1,8 @@
+.expand-nav {
+   transition: margin-left .5s;
+   margin-left: 250px!important;
+}
+
 .openbtn {
     cursor: pointer;
     font-size: 30px!important;
@@ -5,15 +10,6 @@
 
   .sign-out {
     cursor: pointer;
-  }
-
-  .accent-color {
-    color: var(--accent-color);
-  }
-
-  .small-font {
-    font-size: 20px;
-    color: black;
   }
 
   .nav-logo {
