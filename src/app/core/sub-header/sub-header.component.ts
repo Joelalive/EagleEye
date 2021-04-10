@@ -20,4 +20,8 @@ export class SubHeaderComponent implements OnInit {
     this.openNavbar.emit();
   }
 
+  isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  };
+
 }

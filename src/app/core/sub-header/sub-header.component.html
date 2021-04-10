@@ -6,5 +6,5 @@
     <span class="m-auto text-danger order-1 order-lg-0">Kindly Activate SMS package to communicate. Please contact your service provider for more information</span>
     <span class="ml-auto text-white  order-2 order-lg-0">SMS Remaining Count : 0</span>
     <a class="ml-auto text-white sign-out order-0"><i class="fa fa-sign-out" aria-hidden="true"></i>
-       Signout</a>
+       <span [ngClass]="{ 'd-none': isMobileDevice() }"> Signout</span></a>
 </nav>
