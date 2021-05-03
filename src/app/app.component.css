@@ -1,0 +1,11 @@
+.expand-content {
+    transition: margin-left .5s;
+    margin-left: 250px!important;
+ }
+ 
+ @media only screen and (max-width: 570px) {
+
+    .expand-content {
+        margin-left: 0!important;
+     }
+  }

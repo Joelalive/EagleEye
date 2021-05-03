@@ -1,3 +1,4 @@
+import { MenuToggleService } from './../header/menu-toggle.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -7,17 +8,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SubHeaderComponent implements OnInit {
 
-  @Input() openToggle: boolean;
+  openToggle: boolean;
 
-  @Output() openNavbar = new EventEmitter<void>();
-
-  constructor() { }
+  constructor(private menuToggleService: MenuToggleService) { }
 
   ngOnInit(): void {
+    this.menuToggleService.menuToggler.subscribe((resp) => {
+      this.openToggle = resp;
+      console.log(resp);
+    });
   }
 
   openNav() {
-    this.openNavbar.emit();
+    this.menuToggleService.toggleMenu(true);
   }
 
   isMobileDevice() {

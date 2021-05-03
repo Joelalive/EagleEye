@@ -1,3 +1,4 @@
+import { MenuToggleService } from './../header/menu-toggle.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,17 +9,19 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-  @Output() closeNavbar = new EventEmitter<void>();
+  openNav: boolean;
 
-  @Input() openNav: boolean;
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private menuToggleService: MenuToggleService) { }
 
   ngOnInit(): void {
+    this.menuToggleService.menuToggler.subscribe((resp) => {
+      this.openNav = resp;
+      console.log(resp);
+    });
   }
 
   closeNav() {
-    this.closeNavbar.emit();
+    this.menuToggleService.toggleMenu(false);
   }
 
 

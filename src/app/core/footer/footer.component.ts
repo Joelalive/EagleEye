@@ -1,3 +1,4 @@
+import { MenuToggleService } from './../header/menu-toggle.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  shrinkContent: boolean;
+
+  constructor(private menuToggleService: MenuToggleService) { }
 
   ngOnInit(): void {
+    this.menuToggleService.menuToggler.subscribe((resp) => {
+      this.shrinkContent = resp;
+      console.log(resp);
+    });
   }
 
 }
