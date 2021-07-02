@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
           fieldGroupClassName: 'row',
           fieldGroup: [
             {
-              className: 'col-2',
+              className: 'col-md-2',
               type: 'input',
               key: 'firstName',
               templateOptions: {
@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
               },
             },
             {
-              className: 'col-2',
+              className: 'col-md-2',
               type: 'input',
               key: 'lastName',
               templateOptions: {
@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
               },
             },
             {
-              className: 'col-2',
+              className: 'col-md-2',
               type: 'input',
               key: 'mobile',
               templateOptions: {
@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
               },
             },
             {
-              className: 'col-3',
+              className: 'col-md-3',
               type: 'input',
               key: 'email',
               templateOptions: {
@@ -58,7 +58,7 @@ export class ProfileComponent implements OnInit {
               },
             },
             {
-              className: 'col-3',
+              className: 'col-md-3',
               type: 'radio',
               key: 'gender',
               templateOptions: {
