@@ -1,0 +1,29 @@
+<h2>Profile</h2>
+<hr />
+
+<div class="accordion" id="accordionExample">
+    <div class="card mb-2 border" *ngFor="let item of list;let i = index">
+      <div class="card-header bg-dark" id="headingOne">
+        <h2 class="mb-0">
+          <button class="profile-btn btn btn-block text-left text-uppercase" type="button" (click)="current = current==i ? null : i" aria-expanded="false">
+            {{ item.title }}
+            <i class="float-right fa" [ngClass]="{
+                'fa-angle-right': i != current,
+                'fa-angle-down': i == current
+            }"></i>
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" [class.collapse]="current != i">
+        <div class="card-body">
+            <form [formGroup]="item.form" (ngSubmit)="onSubmit(item.form)" #formDirective="ngForm">
+                <formly-form [form]="item.form" [fields]="item.fields" [model]="model"></formly-form>
+                <button type="button" class="btn btn-primary mr-2" (click)="clearForm(formDirective)" >clear</button>
+                <button type="submit" class="btn btn-success" >Save</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
