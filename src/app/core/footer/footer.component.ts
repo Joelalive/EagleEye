@@ -10,6 +10,8 @@ export class FooterComponent implements OnInit {
 
   shrinkContent: boolean;
 
+  currentYear = new Date().getFullYear();
+
   constructor(private menuToggleService: MenuToggleService) { }
 
   ngOnInit(): void {
