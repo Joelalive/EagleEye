@@ -1,3 +1,5 @@
+import { FileValueAccessor } from './../../formly/formly-file/file-value-accessor';
+import { FormlyFieldFile } from './../../formly/formly-file/file-type.component';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +11,11 @@ import { ProfileComponent } from './profile.component';
 
 
 @NgModule({
-  declarations: [ProfileComponent],
+  declarations: [
+    ProfileComponent,
+    FileValueAccessor,
+    FormlyFieldFile,
+  ],
   imports: [
     CommonModule,
     ProfileRoutingModule,
@@ -18,7 +24,11 @@ import { ProfileComponent } from './profile.component';
       extras: { lazyRender: true },
       validationMessages: [
         { name: 'required', message: 'This field is required' },
-      ], }),
+      ],
+      types: [
+        { name: 'file', component: FormlyFieldFile, wrappers: ['form-field'] },
+      ]
+     }),
     FormlyBootstrapModule
   ]
 })

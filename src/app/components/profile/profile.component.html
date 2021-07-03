@@ -18,7 +18,7 @@
       <div id="collapseOne" [class.collapse]="current != i">
         <div class="card-body">
             <form [formGroup]="item.form" (ngSubmit)="onSubmit(item.form)" #formDirective="ngForm">
-                <formly-form [form]="item.form" [fields]="item.fields" [model]="model"></formly-form>
+                <formly-form [form]="item.form" [fields]="item.fields" [model]="item.model"></formly-form>
                 <button type="button" class="btn btn-primary mr-2" (click)="clearForm(formDirective)" >clear</button>
                 <button type="submit" class="btn btn-success" >Save</button>
             </form>
